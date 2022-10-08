@@ -24,6 +24,9 @@ else{
 }
 
 
+// if use && it will check both condition is both true then return value
+// if use || it will check both condition is once meet the condition it will return value value
+
 
 
 

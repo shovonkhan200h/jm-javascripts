@@ -1,52 +1,55 @@
-const fitTomile=(num)=>{
-    let feet =  num * 5280
-    let mile= Math.floor(feet)
-    return mile
+const feetToMile=(mile)=>{
+    let feet= 5280;
+    result= mile* feet;
+    return result;
 }
 
-console.log(fitTomile(5))
+console.log(feetToMile(2));
 
-const woodCalculator =(chairwood,bedwood,tablewood)=>{
-    let chair = chairwood
-    let table = tablewood
-    let bed = bedwood
-    const total= chair + table + bed
+
+const woodCalculation=(chair,table,bed)=>{
+    total= chair*chair*bed;
     return total
 }
+console.log(woodCalculation(2,5,3));
 
-console.log(woodCalculator(5,10,15))
-
-function tinyFriend(friends) {
-    const min = Math.max(...friends.map(name=> name.length))
-    return friends.filter(name=> name.length == min)
-
-}
-
-let friends = ['kamal', 'shak', 'shak', 'shakib', 'brac'];
-console.log(tinyFriend(friends));
-
-const brickCalucator=(floorNumber)=>{
-    let perFloor = floorNumber * 1000
-    let totalBricks;
-    if(floorNumber > 0 && floorNumber <=10){
-        totalBricks = perFloor * 15
+const brickCalculator=(floor)=>{
+    let perFloor= floor *1000
+    let totalBrick=0;
+    if(floor<=10){
+        totalBrick= perFloor *15
     }
-    else if(floorNumber > 10 && floorNumber <= 20){
-        totalBricks = (perFloor * 12)+ 30000;
-    }
-
-    else if(floorNumber > 30 && floorNumber <= 10000){
-        totalBricks = (perFloor *10) + 70000;
+    else if(floor<=20){
+       let firstPart = 150000
+       let remainPart = floor-10
+       let secondPart = remainPart *12000
+       totalBrick = firstPart + secondPart 
     }
     else{
-        return `invalid floor number`
+        let firstPart = 150000
+        let secondpart = 120000
+        let remainPart = floor-20
+        let thirdPart = remainPart * 10000
+        totalBrick = firstPart + secondpart + thirdPart
     }
-    return totalBricks;
+    return totalBrick
+
 }
 
-let result= brickCalucator(20)
-console.log(result);
 
+console.log(brickCalculator(37))
 
+const tinyFriend=(friends)=>{
+  let tiny= friends[0]
+  for(let i=1; i<friends.length; i++){
+    let element = friends   [i]
+    if(element<tiny){
+        tiny= element
+    }
+  }
+  return tiny
+}
 
-
+let friends=[`sajeeb`,`anan`,`hridoy`]
+let result = tinyFriend([`sajeeb`,`anan`,`hridoy`])
+console.log(result)

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <button>click me</button>
+    <button id="btn-2">1-btn-1</button>
+    <button>2-btn-1</button>
+    <button>3-btn-1</button>
+    <script>
+        const secondButton = document.getElementById(`btn-2`)
+        secondButton.addEventListener(`mousedown`,()=>{
+            document.body.style.backgroundColor=`grey`;
+        })
+    </script>
+</body>
+</html>

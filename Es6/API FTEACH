@@ -1,0 +1,16 @@
+
+fetch(`https://jsonplaceholder.typicode.com/users`)
+.then(res => res.json())
+.then(data => displayName(data));
+
+
+const displayName =(users)=>{
+        users.forEach(user => {
+                const displayName = user.username
+                const ulList = document.getElementById(`dispay`)
+                ulList.style.listStyle = `none`
+                const newItem = document.createElement(`li`)
+                newItem.innerText = displayName
+                ulList.appendChild(newItem)
+        });
+}

@@ -1,0 +1,37 @@
+const normalPerson = {
+    name: 'John',
+    lastName: 'alex',
+    salary:2000
+}
+
+
+const babyPerson ={
+        name: 'baby',
+        lastName: 'alice',
+        salary: 10000,
+        getFullName:function(){
+                console.log(this.name , this.lastName);
+        },
+        newSalary:function(tax, lawra, chanda){
+              this.salary = this.salary - tax - lawra - chanda;
+              return this.salary;
+        }
+}
+// babyPerson.newSalary(20)
+// console.log(babyPerson.salary);
+ 
+// const newPerson = babyPerson.newSalary.bind(normalPerson)
+// const values = newPerson(1000)
+// console.log(values);
+
+// const sex = babyPerson.newSalary.call(normalPerson, 1000,100,10)
+// console.log(sex);
+
+// const yo = babyPerson.newSalary.apply(normalPerson, [1000,100,10])
+// console.log(yo);
+
+
+// for bind we make extra function to use
+// for call we call directy the function
+// for apply we can send array value
+
